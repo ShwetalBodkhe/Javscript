@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //*****      Destructuring    ******
+        //Destructuring is a feature in JavaScript that allows you to unpack values 
+        //from arrays or properties from objects into distinct variables — in a clean and concise way.
+    
+    //1) Object Destructuring:Extract values from an object
+
+  const user={
+    name:'alice',
+    age:22,
+    address:'abc'
+  }
+
+  //destructuring
+
+  const{name,age}=user;
+  console.log(name);
+  console.log(age);
+
+   //You can also rename during destructuring:
+    
+   const{name:username,age:userage}=user;
+   console.log(username);//alice
+   console.log(userage);//22
+   
+    </script>
+</body>
+</html>

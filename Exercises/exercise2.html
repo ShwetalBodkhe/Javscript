@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputtext{
+            border-color: blue;
+            border-width: 20px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button >9a</button>
+    <button onClick="changetext()" class="button2">9b</button>
+
+    <button onClick="headtail('head')" class="headbutton">heads</button>
+    <button onClick="headtail('tail')" class="tailbutton">tails</button>
+     <p class="text-output"></p>
+
+     <input type="text" placeholder="Enter name" class="input-text" onkeydown="Enterpress()" >
+     <button onClick="submitText()">Submit</button>
+     <p class="p-text"></p>
+
+     <input type="text" class="cal-text">
+     <button onClick="CalculateCost()" >Calculate</button>
+      <p class="totalcost"></p>
+
+      <input type="text" class="inputtext"  onkeyup="presskey(event)">
+       <p class="text"></p>
+
+    <script>
+        const btn=document.querySelector('button')
+        
+        console.log(btn)
+
+        function changetext(){
+            const btn2=document.querySelector('.button2')
+
+            if(btn2.textContent==='9b'){
+                btn2.textContent='9b done!'
+            }else{
+                btn2.textContent='9b';
+            }
+        }
+
+        function headtail(choice){
+          document.querySelector('.text-output').textContent=`You choose ${choice}`
+        }
+
+        function submitText(){
+             const text=document.querySelector('.input-text').value
+             document.querySelector('.p-text').textContent=`Your name is: ${text}`
+        }
+        function Enterpress(){
+            if(event.key==='Enter'){
+                submitText()
+            }
+        }
+    
+        function CalculateCost(){
+            let output=Number(document.querySelector('.cal-text').value)
+            if(output<40){
+                output=output+10
+            }
+            document.querySelector('.totalcost').textContent=`$${output}`;
+        }
+        
+        function presskey(event){
+        const input=document.querySelector('.inputtext').value;
+        document.querySelector('.text').textContent=`${input}`;
+        }  
+    </script>
+</body>
+</html>

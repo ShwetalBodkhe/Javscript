@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      //  **********AutoBoxing***********
+        // What is Autoboxing in JavaScript ?
+         //   In JavaScript, autoboxing refers to the automatic conversion of primitive values(like string, number, boolean) into their corresponding object wrapper types so you can call methods on them.
+
+          //✅ Example:
+               
+         // let str = "hello";
+          //  console.log(str.toUpperCase()); // Output: "HELLO"
+       //🧠 What's happening here?
+        //str is a primitive string.
+
+         //But we’re calling a method(toUpperCase()) on it — which only exists on String objects.
+
+         //JavaScript internally does this:
+
+       
+        //str = new String("hello");   // auto-boxing
+        //str.toUpperCase();           // method call
+        //After the method is executed, the temporary object is discarded and you're left with the primitive again. -->
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+      console.log('hello'.replace('e','o'));
+      
+      const object1={ //object1 holds the reference to an object in memory
+        message:'hello'
+      }
+      const object2=object1;// here object2 copies the reference not the object1 itself.
+      //So now both object1 and object2 refer to the same object in memory
+      //object2 is a reference to the same object as object1.
+      //Neither is the owner; they are both references to the same underlying object.
+    
+    object1.message='good job'; //change the value of object 1
+    console.log(object1);
+    console.log(object2);
+
+    const object3={
+        message:'good job'
+    }
+    console.log(object3===object1)//false because compare the references not the values inside
+    console.log(object1===object2)//true
+    console.log(object2===object3)//false
+    console.log(object2===object1)//true
+    console.log(object3==object1)//false
+     console.log(object1==object2)//true
+      console.log(object2==object3)//false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of order" class="input-cost" onkeydown="handleonkeydown"
+    
+    
+    >
+  
+   
+
+    <button onClick="calculateCost()" class="Calculate-button">Calculate</button>
+     <p class="js-total-cost"></p>
+     
+     
+    <script>
+        window.document
+       window.console.log("window");
+       window.alert('window messaging')
+        function handleonkeydown(){
+       
+         if(event.key==='Enter'){
+        calculateCost()
+    }
+        }
+
+        function calculateCost(){
+            
+            const inputElement=document.querySelector('.input-cost')
+            //let cost=inputElement.value;//this convert the total cost to string ex. if i give input 1 and when click on calculate button it prints 110; 
+            let cost=Number(inputElement.value)//this print the addition of 1+10=11 on page44
+            if(cost<40){
+                cost=cost+10;
+            }
+             document.querySelector('.js-total-cost')
+             .innerHTML=`$${cost}` //print the output on page
+        }
+
+    </script>
+</body>
+</html>

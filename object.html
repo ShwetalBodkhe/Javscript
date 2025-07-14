@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const product={
+            name:'socks',
+            price:1090
+        }
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name="pencil";  //change the value of name
+        console.log(product);
+
+        product.newProperty=true; // we add new attribute 
+        console.log(product);
+
+        console.log(typeof(product))
+
+        const product2={
+            age:12,
+            name:'shirt',
+          'delivery-time':'1 day',
+          rating:{
+            stars:4.5,
+            count:87
+          },
+          fun:function function1(){
+            console.log('function inside object');
+          }
+        }
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);
+        console.log(product2)
+        console.log(product2.rating);
+        console.log(product2.rating.count);
+        console.log(product2.rating.stars);
+        console.log(product2.fun());
+        console.log(typeof(console.log))
+
+        //Built in Objects
+        //Two types: 1) JSON object 2) localStorage
+        //JSON object has two function 1) JSON.stringify() 2) JSON.parse()
+        //localStorage has three unction: 1)localStorage.setItem('attribute_name','value') 2)localStorage.getItem(attribute_name);  3)localStorage.removeItem(attribute_name)
+                     
+        console.log( JSON.stringify(product2));//convert javascript object to JSON object , same data as it is but in double quotes.
+       console.log(JSON.parse( JSON.stringify(product2))); // convert JSON object back to javascript object, same data as it is but in double quotes.
+   
+      //or both are same output
+      const jsonstring=JSON.stringify(product2);
+      console.log(JSON.parse(jsonstring));
+
+     //localStorage only supports strings.
+      console.log(localStorage.setItem('rank','1'));// set the value but not display on console
+      console.log( localStorage.getItem('rank')); //get the value and show the output :1
+
+      //if we want to use value that are not string or not in single quote (because JSON supports only single quote) then we use JSON.stringify()function
+
+      //ex. localStorage.setItem('rate':5star); so localStorage only support string and here we not use string to 5star so this is not working
+      // so we use JSON.stringify(5star) to convert this into string which is in single quote.
+       const star5=10;
+     console.log( localStorage.setItem('rate',JSON.stringify(star5)));
+     console.log( localStorage.getItem('rate'));
+     console.log(localStorage.removeItem('rate'));//if we not write rate in single quote it gives error' rate is not defined.'
+    </script>
+</body>
+</html>

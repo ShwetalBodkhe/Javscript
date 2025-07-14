@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <script>
+       
+        function f1(parameter){  //single parameter
+          console.log(parameter*0.1);
+            
+        }
+        f1(2000);
+        f1(6000);
+        f1(0.02);
+
+ 
+        function add(a,b){ //two or more parameters
+            console.log(a+b);
+        }
+        add(3,6);
+        add(23,67);
+
+
+        function calculateTax(cost,taxPercent=0.8){  //assigning defult value to taxPercent
+           console.log(cost*taxPercent);
+        }
+        calculateTax(5000);
+    </script>
+</body>
+</html>

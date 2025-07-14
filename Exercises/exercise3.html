@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .total,.clear{
+        color:white;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <button onClick="showQuantity()" class="show-quantity">Show Quantity</button>
+    <button onClick="updateQuantity(1)" class="add-to-cart">Add to Cart</button>
+    <button onClick="updateQuantity(2)" class="two">+2</button>
+    <button onClick="updateQuantity(3)" class="three">+3</button>
+    <button onClick="updateQuantity(4)" class="four">+4</button>
+    <button onClick="updateQuantity(5)" class="five">+5</button>
+    <button onClick="updateQuantity(-1)" class="remove">Remove from cart</button>
+    <button onClick="updateQuantity(-2)" class="n-two">-2</button>
+    <button onClick="updateQuantity(-3)" class="n-three">-3</button>
+    <p class="cart-q">Cart quantity: 0</p>
+    <hr />
+
+
+    <!--   Calculator   -->
+    <div>
+        <div class="display" id="calc-display">0</div>
+        <br />
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <br />
+        <br />
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <br />
+        <br />
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <br />
+        <br />
+        <button onclick="appendValue('+')">+</button>
+        <button onclick="appendValue('-')">-</button>
+        <button onclick="appendValue('*')">*</button>
+        <button onclick="appendValue('/')">/</button>
+        <br />
+        <br />
+        <button onclick="calculate()" class="total">=</button>
+        <button onclick="clearDisplay()" class="clear">C</button>
+
+    </div>
+
+
+    <script>
+        let CartQuantity = 0;
+        function updateQuantity(quantity) {
+            CartQuantity += quantity;
+            if (CartQuantity < 0) {
+                CartQuantity = 0;
+            }
+            document.querySelector('.cart-q').textContent = `Cart quantity: ${CartQuantity}`
+        }
+
+        function showQuantity() {
+            alert(`Cart quantity: ${CartQuantity}`)
+        }
+
+
+
+        let calcInput = '';
+        function appendValue(val) {
+            calcInput += val;
+            updateCalcDisplay(calcInput);
+            localStorage.setItem('calc', calcInput)
+        }
+
+        function calculate() {
+            try {
+                const result = eval(calcInput);
+                calcInput = result.toString();
+                updateCalcDisplay(calcInput);
+                localStorage.setItem('calc', calcInput);
+            } catch {
+                updateCalcDisplay("Error");
+            }
+        }
+
+        function clearDisplay() {
+            calcInput = '';
+            updateCalcDisplay('0');
+            localStorage.removeItem('calc');
+        }
+        function updateCalcDisplay(value) {
+            document.getElementById('calc-display').textContent = value;
+        }
+
+        // Load from localStorage on page load
+        window.onload = function () {
+            const saved = localStorage.getItem('calc');
+            if (saved) {
+                calcInput = saved;
+                updateCalcDisplay(calcInput);
+            }
+        }
+    </script>
+</body>
+
+</html>

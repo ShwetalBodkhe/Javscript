@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .js-subscribe-button{
+            color:white;
+            background-color: rgb(219, 22, 22);
+            border:none;
+            height:30px;
+            width:90px;
+        }
+        .is-subscribed{
+            color:black;
+            background-color: gray;
+            border:none;
+            height:30px;
+            width:90px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>YouTube Subsribe Button</p>
+    <button onClick="
+    const buttonElement=document.querySelector('.js-subscribe-button')
+    if(buttonElement.innerHTML==='Subscribe'){
+    buttonElement.innerHTML='Subscribed';
+    buttonElement.classList.add('is-subscribed');
+    }else{
+    buttonElement.innerHTML='Subscribe';
+    buttonElement.classList.remove('is-subscribed');
+    }
+    "  class="js-subscribe-button sub-button ">Subscribe</button> <!-- the innerHTML is suitable for when there is no extra spaces for Subscribe button if the Subscribe button in from next line the button not changed to Subscribe-Subscribed . So if we take space for button or any element
+                                                       then we use innerText in that case so its handle extra spaces.-->
+    <script>
+
+    </script>
+</body>
+</html>
