@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*const strArray = [['good', 'hello', 'search', 'shwetal', 'sagar'], ['not', 'found']];
+        for (let i = 0; i < strArray.length; i++) {
+            const currentArray = strArray[i];
+            const index = currentArray.indexOf('search');
+            if (index !== -1) {
+                console.log(`'search' found in array ${i} at index ${index}`);
+            } else {
+                console.log(`'search' not found in array ${i}: -1`);
+            }
+        }*/
+
+        const arrays = [
+      ['hello', 'search', 'world', 'search', 'good'],
+      ['not', 'found']
+    ];
+
+    for (let i = 0; i < arrays.length; i++) {
+      const currentArray = arrays[i];
+      let found = false;
+
+      for (let j = 0; j < currentArray.length; j++) {
+        if (currentArray[j] === 'search') {
+          console.log(`'search' found in array ${i} at index ${j}`);
+          found = true;
+          break; // stop at first occurrence
+        }
+      }
+
+      if (!found) {
+        console.log(`'search' not found in array ${i}: -1`);
+      }
+    }
+    </script>
+</body>
+
+</html>

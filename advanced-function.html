@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function greeting(){
+            console.log('hello');
+        }
+        greeting();
+
+        //in JS function are values - we can save it in a variable
+        const num=2; 
+        const function1=function(){ //greeting() . function() is a Anonymous function means a function without a name
+            console.log('hello2');
+        };
+        console.log(function1);
+        console.log(typeof(function1));
+        function1();
+
+        const object1={
+            num:2,
+            fun:function greeting(){
+                console.log('hello3');
+            }
+        };
+        object1.fun();
+
+        function display(param){
+             console.log(param);
+        }
+        display(2); //passing a value into a function
+        
+
+        //we can also pass a function into a function
+
+        function run(param){
+           param();
+        }
+        run(function(){  //passing a function into another function 
+            console.log('hello4');
+        })*/
+
+
+                    //  ******  setTimeout()     *******
+
+
+        //***Synchronous code- will wait for one line to finish before going to the next line
+        //***Asynchoronous code-This code is called asynchronous code-means won't wait for a line to finish before going to the next line
+        setTimeout(function(){ //it takes two parameter //here is the first parameter //here we can use function as a value and passing it into another function
+            console.log('timeout');
+            //the code inside this function is all synchronous code.
+            console.log('timeout1');
+            console.log('timeout2');
+        },3000)// it waits 3 seconds and then call the function //here is the second parameter / it takes a number in milliseconds 1000 milliseconds=1 second / how log to wait before running this function
+       console.log('next line');//print this line first then timout after 3 seconds
+
+
+
+       //Advantages of Asynchronous code
+       //1)it doesn't block our code for 3 seconds
+
+
+       // ********* setInterval()  **********
+
+       setInterval(function(){
+        console.log('interval');
+       },3000);  //it takes two parameters 1. A function we want to run in the future 2.no. in milliseconds
+      console.log('next line 2');
+    </script>
+</body>
+</html>

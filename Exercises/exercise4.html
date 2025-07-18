@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+    const arr=[10,20,30];
+    arr[2]=99;
+    console.log(arr);
+
+    const newArr=[1,20,22,24,5];
+   function getLastValue(array){
+    return array[array.length-1]
+   }
+   console.log(getLastValue(newArr));
+
+
+   const stringarray=['hi','hello','good'];
+   function GetLastString(array){
+   return getLastValue(array);
+   }
+    console.log(GetLastString(stringarray));
+
+
+    //swapping first and last elment of an array
+     const array=[1,20,22,24,5];
+     
+    function swap(array){
+        if(array.length<2){
+            return array;
+        }
+        const temp=array[0];
+        array[0]=array[array.length-1];
+        array[array.length-1]=temp;
+
+       return array;
+    }
+    console.log(swap(array));
+
+    const array1=['hi','hello','good'];
+    function swap1(array1){
+       return swap(array1);
+    }
+     console.log(swap1(array1));
+   
+
+     //counts by 2
+
+     const countArr=[];
+     
+     for(let i=0;i<=10;i+=2){
+      countArr.push(i);
+     }
+     console.log(countArr)
+
+
+      //find min max from an array
+      function minMax(array){
+        if(array.length==0){
+            return {min:null,max:null};
+        }
+        let min=array[0];
+        let max=array[0];
+
+        for(let i=1;i<array.length;i++){
+            if(array[i]<min){
+                min=array[i];
+            }
+            if(array[i]>max){
+                max=array[i];
+            }
+        }
+        return {min:min,max:max};
+      }
+      console.log(minMax([1,-5,3]));
+      console.log(minMax[1,3,-3,-5,6]);
+      console.log(minMax([]));
+       console.log(minMax([3]));
+      console.log(minMax([1,-1]));
+
+    </script>
+</body>
+</html>

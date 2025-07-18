@@ -5,7 +5,16 @@
       ties: 0
     };
 
-    document.querySelector('.js-rock-button')
+    let isAutoPlaying=false;
+    let intervalId;
+    
+     
+
+ // const autoPlay=()=>{
+
+  //}
+
+  document.querySelector('.js-rock-button')
     .addEventListener('click',()=>{
       playGame('rock');
 
@@ -23,7 +32,7 @@
       playGame('scissors')
     })
 
-
+    
     document.body.addEventListener('keydown',(event)=>{   //it shows which key we pressed in our keyboard
       //console.log(event.key);
 
@@ -35,6 +44,20 @@
         playGame('scissors');
       }
     });
+
+    function autoPlay(){
+      if(!isAutoPlaying){
+         intervalId = setInterval(()=>{
+        const playerMove=pickComputerMove();
+         playGame(playerMove);
+      },1000);
+      isAutoPlaying = true;
+      }else{
+        clearInterval(intervalId); //stop the interval
+       isAutoPlaying = false;
+      }
+      
+    }
 
     function playGame(playerMove) {
       const computerMove = pickComputerMove();
@@ -118,4 +141,6 @@
     }
 
     updateScoreElement();
+
+
   

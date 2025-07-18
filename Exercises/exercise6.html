@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="changeText()" class="btn">Start</button>
+    <button onclick="AddToCart()">Add to Cart</button>
+    <p class="text"></p>
+    <button onClick="ChangeTitle('add')" >Add</button>
+    <button onclick="ChangeTitle('remove')" >Remove</button>
+    <script>
+
+        const add = function Add() {
+            console.log(2 + 3);
+        }
+
+
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+
+        runTwice(function () {
+            console.log('12b');
+        })
+        runTwice(add);
+
+
+        function changeText() {
+            const button = document.querySelector('.btn');
+            if (button.textContent === 'Start') {
+                button.textContent = 'Loading...'
+
+                setTimeout(function () {
+                    button.textContent = 'Finished!';
+                }, 1000);
+                // clearTimeout();
+            }
+
+        }
+
+        function AddToCart() {
+            // document.querySelector('.add-to-cart');
+            document.querySelector('.text').textContent = `Added`;
+            // localStorage.removeItem();
+
+        }
+
+
+
+
+        let titleCount = 0;
+
+        function ChangeTitle(action) {
+            if (action === 'add') {
+                titleCount++;
+            } else if (action === 'remove' && titleCount > 0) {
+                titleCount--;
+            }
+
+            document.title = `App (${titleCount}) New message`;
+        }
+    </script>
+</body>
+
+</html>

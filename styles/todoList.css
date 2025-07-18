@@ -1,0 +1,35 @@
+  
+   .toinput {
+            padding: 5px 9px;
+            margin-right: 21px;
+
+
+        }
+  .add-button {
+            color: white;
+            background-color: green;
+            border: none;
+            border: solid;
+            width: 80px;
+            height: 35px;
+        }
+
+        .delete-button {
+            color: white;
+            background-color: rgb(125, 6, 6);
+            border: none;
+            border: solid;
+            width: 80px;
+            height: 35px;
+           
+        }
+
+        .todo-grid {
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            column-gap: 10px;
+            row-gap: 10px;
+            margin-top: 20px;
+            align-items: center;
+            
+        }
